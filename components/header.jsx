@@ -16,13 +16,21 @@ export function Header() {
     return (
         <nav className="flex flex-wrap items-center gap-4 pt-6 pb-12 sm:pt-12 md:pb-24">
             <Link href="/">
-                <Image src={netlifyLogo} alt="Netlify logo" />
+                <Image
+                    src={netlifyLogo}
+                    alt="Plural logo"
+                    className="w-32 h-auto" // 🔹 Ajuste de tamanho
+                    priority
+                />
             </Link>
             {!!navItems?.length && (
                 <ul className="flex flex-wrap gap-x-4 gap-y-1">
                     {navItems.map((item, index) => (
                         <li key={index}>
-                            <Link href={item.href} className="inline-flex px-1.5 py-1 sm:px-3 sm:py-2">
+                            <Link
+                                href={item.href}
+                                className="inline-flex px-1.5 py-1 sm:px-3 sm:py-2"
+                            >
                                 {item.linkText}
                             </Link>
                         </li>
@@ -35,7 +43,7 @@ export function Header() {
                 rel="noopener noreferrer"
                 className="hidden lg:inline-flex lg:ml-auto"
             >
-                <Image src={githubLogo} alt="GitHub logo" className="w-7" />
+                <Image src={githubLogo} alt="GitHub logo" className="w-7 h-auto" />
             </Link>
         </nav>
     );
